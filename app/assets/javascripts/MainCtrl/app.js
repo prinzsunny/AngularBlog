@@ -3,7 +3,7 @@ Blog = angular.module('Blog', ['ngRoute'])
 Blog.config(['$routeProvider',
     function($routeProvider){
         $routeProvider.
-            when('/post', {
+            when('/post/:postId', {
                 templateUrl: '../assets/mainPost.html',
                 controller: 'postCtrl'})
             .otherwise({

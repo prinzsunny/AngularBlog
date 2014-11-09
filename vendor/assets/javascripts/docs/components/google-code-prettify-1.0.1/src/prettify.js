@@ -885,7 +885,7 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[
     shortcutStylePatterns.push([PR_PLAIN,       /^\s+/, null, ' \r\n\t\xA0']);
 
     var punctuation =
-      // The Bash man page says
+      // The Bash main page says
 
       // A word is a sequence of characters considered as a single
       // unit by GRUB. Words are separated by metacharacters,

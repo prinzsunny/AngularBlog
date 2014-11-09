@@ -32,7 +32,7 @@ $provide.value("$locale", {
     ],
     "SHORTDAY": [
       "s\u00f8n.",
-      "man.",
+      "main.",
       "tir.",
       "ons.",
       "tor.",

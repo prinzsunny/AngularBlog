@@ -1,4 +1,4 @@
-<h1 class="text-center">{{data.postId}} - {{ data.post.title }}</h1>
+<h1 class="text-center">{{data.postId}} - {{ data.posts[data.postId-1].title }}</h1>
 <div class="row">
-    <p>{{ data.post.contents }}</p>
+    <p>{{ data.posts[data.postId-1].contents }}</p>
 </div>

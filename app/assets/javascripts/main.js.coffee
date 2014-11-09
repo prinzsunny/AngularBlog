@@ -14,4 +14,5 @@
 #= require_tree ./MainCtrl/
 
 
+Blog = angular.module('Blog', ['ngRoute'])
 

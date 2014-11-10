@@ -4,6 +4,7 @@
 
 
 var indexCtrl = function($scope,$location,$http,postData){
+    console.log(postData)
     $scope.data= postData.data
     console.log(postData.data)
     postData.loadPosts();

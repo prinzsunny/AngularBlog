@@ -4,6 +4,7 @@
 
 
 var postCtrl = function($scope,$routeParams,postData) {
+    console.log(postData);
     $scope.data = postData.data
     console.log($scope.data);
     postData.loadPosts();

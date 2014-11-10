@@ -4,7 +4,7 @@ angular.module('Blog').config(['$routeProvider',
         $routeProvider
             .when('/post/new',{
                 templateUrl:'../assets/mainCreatePost.html',
-                controller:'newPostCtrl'
+                controller:'createPostCtrl'
             })
             .when('/post/:postId', {
             templateUrl: '../assets/mainPost.html',
@@ -16,7 +16,7 @@ angular.module('Blog').config(['$routeProvider',
 }]);
 
 angular.module('Blog').factory('postData', [
-    '$http', function($http) {
+    '$http', function($http,$location) {
 
         var postData;
         postData = {
@@ -47,6 +47,24 @@ angular.module('Blog').factory('postData', [
             };
         };
 
+        postData.createPost = function(newPost) {
+            var data;
+            if (newPost.newPostTitle === '' || newPost.newPostContents === '') {
+                alert('Neither the Title nor the Body are allowed to be left blank.');
+            }
+            data = {
+                new_post: {
+                    title: newPost.newPostTitle,
+                    contents: newPost.newPostContents
+                }
+            };
+            $http.post('./posts.json', data).success(function(data) {
+                postData.data.posts.push(data);
+                $location.url('/')
+            }).error(function() {
+                console.error('Failed to create new post.');
+            });
+        };
         console.log("Initialized postData.");
         return postData;
     }
